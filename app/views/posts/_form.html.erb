@@ -1,0 +1,21 @@
+<%= bootstrap_form_with(model: post, local: true) do |form| %>
+
+  <%= form.text_field :title %>
+
+  <%= form.text_area :body %>
+
+  <%= form.text_field :excerpt %>
+
+  <%= form.text_field :excerpt_image %>
+  
+  <%= form.text_field :body_image %>
+  
+  <%= form.date_field :post_on %>
+
+  <%= form.number_field :type %>
+  
+  <%= form.date_field :written_on %>
+  
+  <%= form.submit %>
+  
+<% end %>
