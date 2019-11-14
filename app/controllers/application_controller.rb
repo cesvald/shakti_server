@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!, only: [:edit, :update, :new, :create]
-  load_and_authorize_resource
   
   rescue_from CanCan::AccessDenied do |exception|
     respond_to do |format|
