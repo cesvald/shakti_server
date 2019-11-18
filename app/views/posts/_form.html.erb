@@ -12,7 +12,7 @@
   
   <%= form.date_field :post_on %>
 
-  <%= form.number_field :type %>
+  <%= form.select :kind, Post.kinds.keys.collect {|kind| [kind.titleize, kind]} %>
   
   <%= form.date_field :written_on %>
   

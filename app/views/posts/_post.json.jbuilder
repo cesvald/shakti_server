@@ -1,2 +1,4 @@
-json.extract! post, :id, :title, :body, :excerpt, :excerpt_image, :body_image, :post_on, :type, :written_on, :created_at, :updated_at
-json.url post_url(post, format: :json)
+json.extract! post, :id, :title, :excerpt_image, :body_image, :post_on, :kind, :written_on
+json.parse_body post.parse_body_to_flutter
+json.parse_excerpt post.parse_excerpt_to_flutter
+

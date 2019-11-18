@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_212458) do
     t.string "excerpt_image"
     t.string "body_image"
     t.date "post_on"
-    t.integer "type"
+    t.integer "kind"
     t.date "written_on"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

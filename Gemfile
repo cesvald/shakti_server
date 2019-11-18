@@ -18,6 +18,12 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'pg'
 
+#filter by scope
+gem 'has_scope'
+
+#paginator
+gem 'kaminari'
+
 gem 'slim'
 
 gem 'devise'

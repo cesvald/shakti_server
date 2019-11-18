@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :excerpt_image
       t.string :body_image
       t.date :post_on
-      t.integer :type
+      t.integer :kind
       t.date :written_on
 
       t.timestamps
