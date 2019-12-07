@@ -3,4 +3,7 @@ class Post < ApplicationRecord
   scope :by_kind, ->(kind) { where(kind: kind) }
   
   enum kind: [:meditation, :emanation, :quote, :phrase]
+  
+  has_rich_text :body
+  has_rich_text :excerpt
 end
