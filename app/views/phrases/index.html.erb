@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Phrases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Body image</th>
+      <th>Post on</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% console %>
+    <% @phrases.each do |phrase| %>
+      <tr>
+        <td><%= phrase.body %></td>
+        <td><%= phrase.body_image %></td>
+        <td><%= phrase.post_on %></td>
+        <td><%= link_to 'Show', phrase %></td>
+        <td><%= link_to 'Edit', edit_phrase_path(phrase) %></td>
+        <td><%= link_to 'Destroy', phrase, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Phrase', new_phrase_path %>
