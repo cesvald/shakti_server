@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
-
-<table>
+<%= link_to 'New Post', new_post_path, class: "btn btn-primary", style:"color: white"%>
+<br>
+<br>
+<%= paginate @posts%>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
       <th>Body</th>
       <th>Excerpt</th>
-      <th>Excerpt image</th>
-      <th>Body image</th>
       <th>Post on</th>
       <th>Kind</th>
       <th>Written on</th>
@@ -21,13 +22,11 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.body %></td>
+        <td><%= post.body.to_plain_text.truncate(50) %></td>
         <td><%= post.excerpt %></td>
-        <td><%= post.excerpt_image %></td>
-        <td><%= post.body_image %></td>
-        <td><%= post.post_on %></td>
+        <td style="width: 102px"><%= post.post_on %></td>
         <td><%= post.kind %></td>
-        <td><%= post.written_on %></td>
+        <td style="width: 102px"><%= post.written_on %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -35,7 +34,6 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @posts %>
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>

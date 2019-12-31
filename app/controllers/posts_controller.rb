@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   
   protected
     def collection
-      @posts ||= end_of_association_chain.all
+      @posts ||= end_of_association_chain.page(params[:page])
     end
   
   private
@@ -19,5 +19,4 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :body, :excerpt, :excerpt_image, :body_image, :post_on, :kind, :written_on)
     end
     
-  
 end

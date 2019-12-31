@@ -23,6 +23,7 @@ gem 'has_scope'
 
 #paginator
 gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 gem 'slim'
 
