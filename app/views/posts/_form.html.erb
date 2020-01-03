@@ -10,6 +10,8 @@
   
   <%= form.text_field :body_image %>
   
+  <%= form.text_field :youtube_video_code %>
+  
   <%= form.date_field :post_on %>
 
   <%= form.select :kind, Post.kinds.keys.collect {|kind| [kind.titleize, kind]} %>
