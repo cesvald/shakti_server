@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   
   protected
     def collection
-      @posts ||= end_of_association_chain.page(params[:page])
+      @posts ||= end_of_association_chain.order(post_on: :desc).page(params[:page])
     end
   
   private
