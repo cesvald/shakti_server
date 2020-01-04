@@ -9,7 +9,7 @@ class PhrasesController < ApplicationController
   
   protected
     def collection
-      @phrases ||= end_of_association_chain.all
+      @phrases ||= end_of_association_chain.order(post_on: :desc).limit(100)
     end
     
   private
