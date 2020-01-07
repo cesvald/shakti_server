@@ -3,6 +3,11 @@ p#notice
 h1
   | Posts
 = link_to 'New Post', new_post_path, class: "btn btn-primary", style:"color: white"
+- if can? :manage, Post
+  |&nbsp;
+  = link_to 'Report Timestamp', configuration_path(Configuration.first, configuration: {value: Time.now.to_i}), method: :patch, class: "btn btn-secondary"
+  |&nbsp;
+  = Configuration.timestamp
 br
 br
 = form_tag posts_path, method: :get do
