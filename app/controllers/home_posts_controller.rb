@@ -1,7 +1,7 @@
 class HomePostsController < ApplicationController
   
   def index
-    timestamp = ::Configuration.timestamp.to_i < Time.now.beginning_of_day.to_i ? Time.now.beginning_of_day.to_i : ::Configuration.timestamp.to_i
+    timestamp = ::Configuration.timestamp.to_i < (Time.now.beginning_of_day.to_f * 1000).to_i ? (Time.now.beginning_of_day.to_f * 1000).to_i : ::Configuration.timestamp.to_i
     if params.has_key?(:timestamp) && params[:timestamp].to_i > timestamp
       @posts = [] 
     else
